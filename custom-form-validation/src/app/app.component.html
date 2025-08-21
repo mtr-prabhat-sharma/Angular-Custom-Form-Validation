@@ -12,10 +12,10 @@
         Product Serial Number is required
         }
       </mat-error>
-       <mat-error>
+      <mat-error>
         @if (productForm.get("productSerialNumber")?.hasError('invalidSerial') &&
         productForm.get("productSerialNumber")?.touched) {
-         Only letters A–D and digits 0–9 are allowed
+        Only letters A–D and digits 0–9 are allowed
         }
       </mat-error>
     </mat-form-field>
@@ -36,7 +36,7 @@
 
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Product Name</mat-label>
-      <input matInput formControlName="productName">
+      <input type="text" matInput formControlName="productName" appTextOnly>
       <mat-error>
         @if (productForm.get("productName")?.hasError('required') &&
         productForm.get("productName")?.touched) {
@@ -45,7 +45,7 @@
       </mat-error>
     </mat-form-field>
 
-        <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field appearance="fill" class="full-width">
       <mat-label>Product Description</mat-label>
       <input matInput formControlName="productDescription">
       <mat-error>

@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { TextOnlyDirective } from './text-only.directive';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+    TextOnlyDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -62,7 +64,9 @@ export class AppComponent implements OnInit {
     return valid ? null : {invalidSerial: true};
   }
 
-  onSubmitProduct() {}
+  onSubmitProduct() {
+    console.log("Product form value", this.productForm.value)
+  }
 
 
 }
